@@ -19,25 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zth-xi-eSf">
-                                <rect key="frame" x="104" y="163" width="392" height="273"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="501"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="392" id="S57-C6-MrN"/>
+                                    <constraint firstAttribute="width" constant="600" id="S57-C6-MrN"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YcW-8s-gdy">
-                                <rect key="frame" x="167" y="381" width="265" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U3t-z9-nZn">
-                                <rect key="frame" x="167" y="189" width="265" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1DG-HJ-JS4">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="g6L-lk-P2q"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="Album" id="rcU-3x-gcF">
                                         <connections>
@@ -51,8 +42,11 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iix-Rg-bJj">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iix-Rg-bJj">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="tDh-Pt-AXd"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="Share" systemItem="action" id="ZpW-uw-lm9">
                                         <connections>
@@ -61,25 +55,54 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YSA-Ia-oRp">
+                                <rect key="frame" x="20" y="462" width="560" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nBr-Td-rqY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U3t-z9-nZn">
+                                <rect key="frame" x="20" y="117" width="560" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="4wj-Mt-1sL"/>
+                                    <constraint firstAttribute="height" constant="40" id="Uda-9w-UvR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1DG-HJ-JS4" firstAttribute="top" secondItem="zth-xi-eSf" secondAttribute="bottom" constant="120" id="6O1-TC-aC6"/>
+                            <constraint firstItem="Iix-Rg-bJj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="1S7-F3-BB3"/>
+                            <constraint firstItem="Iix-Rg-bJj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="5Ha-4v-PLO"/>
                             <constraint firstItem="U3t-z9-nZn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8eq-55-cFc"/>
-                            <constraint firstItem="YcW-8s-gdy" firstAttribute="leading" secondItem="U3t-z9-nZn" secondAttribute="leading" id="A56-WM-F7h"/>
+                            <constraint firstItem="zth-xi-eSf" firstAttribute="top" secondItem="U3t-z9-nZn" secondAttribute="bottom" constant="-93" id="AwE-AA-knT"/>
+                            <constraint firstItem="1DG-HJ-JS4" firstAttribute="top" secondItem="zth-xi-eSf" secondAttribute="bottom" constant="-9" id="CXn-53-RBG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Iix-Rg-bJj" secondAttribute="trailing" constant="-20" id="E3m-i0-LyM"/>
+                            <constraint firstItem="YSA-Ia-oRp" firstAttribute="width" secondItem="U3t-z9-nZn" secondAttribute="width" id="EKt-Hh-byh"/>
+                            <constraint firstItem="YSA-Ia-oRp" firstAttribute="width" secondItem="U3t-z9-nZn" secondAttribute="width" id="MY9-hw-wN9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1DG-HJ-JS4" secondAttribute="trailing" constant="-20" id="Prt-u2-DNz"/>
+                            <constraint firstItem="YSA-Ia-oRp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QCV-Ds-XLZ"/>
                             <constraint firstItem="1DG-HJ-JS4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="TlW-w1-kMH"/>
-                            <constraint firstItem="YcW-8s-gdy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WSO-Hw-ZoH"/>
-                            <constraint firstAttribute="bottom" secondItem="YcW-8s-gdy" secondAttribute="bottom" constant="189" id="aG4-4I-viJ"/>
-                            <constraint firstItem="YcW-8s-gdy" firstAttribute="height" secondItem="U3t-z9-nZn" secondAttribute="height" id="dQG-Kp-J7R"/>
+                            <constraint firstItem="YSA-Ia-oRp" firstAttribute="height" secondItem="U3t-z9-nZn" secondAttribute="height" id="eAI-t2-V8y"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1DG-HJ-JS4" secondAttribute="bottom" id="hsO-ui-C4n"/>
                             <constraint firstItem="zth-xi-eSf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mjS-x9-475"/>
-                            <constraint firstItem="U3t-z9-nZn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="169" id="rwm-HO-l14"/>
-                            <constraint firstItem="zth-xi-eSf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zHG-nP-jg5"/>
+                            <constraint firstItem="1DG-HJ-JS4" firstAttribute="top" secondItem="zth-xi-eSf" secondAttribute="bottom" id="pi3-B9-tfW"/>
+                            <constraint firstItem="YSA-Ia-oRp" firstAttribute="top" secondItem="zth-xi-eSf" secondAttribute="bottom" constant="-103" id="xfw-MC-sqN"/>
+                            <constraint firstItem="zth-xi-eSf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="14.5" id="zHG-nP-jg5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="pi3-B9-tfW"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="bottomText" destination="YcW-8s-gdy" id="785-hw-2H7"/>
+                        <outlet property="bottomText" destination="YSA-Ia-oRp" id="A2X-mo-NYK"/>
                         <outlet property="bottomToolbar" destination="1DG-HJ-JS4" id="I5V-59-ZHK"/>
                         <outlet property="cameraButton" destination="hWf-7D-6yW" id="Xt5-Vu-S2t"/>
                         <outlet property="imagePickerView" destination="zth-xi-eSf" id="rFE-Rc-3nG"/>

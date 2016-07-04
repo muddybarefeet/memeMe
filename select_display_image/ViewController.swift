@@ -31,7 +31,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 //        -3.0 keeps the text white
         NSStrokeWidthAttributeName : -3.0
     ]
-    
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -70,8 +69,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
-        let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        let userInfo = notification.userInfo!
+        let keyboardSize = userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.CGRectValue().height
     }
     
@@ -100,13 +99,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePickerView.image = image
+            shareButton.enabled = true
             dismissViewControllerAnimated(true, completion: nil)
         }
-        shareButton.enabled = true
     }
 
-    @IBAction func pickAnImage(sender: AnyObject) {
+    @IBAction func pickAnImage (sender: AnyObject) {
 //        launch the imagepicker
+        print("clicked album button")
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
@@ -114,7 +114,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
-    @IBAction func takeAPicture(sender: AnyObject) {
+    @IBAction func takeAPicture (sender: AnyObject) {
         let camera = UIImagePickerController()
         camera.delegate = self
         camera.sourceType = UIImagePickerControllerSourceType.Camera
@@ -128,10 +128,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         var memedImage: UIImage
     }
     
+    
+    var memes = [Meme]()
+    
     func save(memedImage: UIImage) {
         print("saving the image")
-        let meme = Meme(topString: topText.text!, bottomString: bottomText.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
-        //TODO: Add to memes array in AppDelegate
+        let memeImg = Meme(topString: topText.text!, bottomString: bottomText.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
+        memes.append(memeImg)
+        print("memes", memes)
     }
     
     @IBAction func shareMemeButtonPressed(sender: UIBarButtonItem) {
