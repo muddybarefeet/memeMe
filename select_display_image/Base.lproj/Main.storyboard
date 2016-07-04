@@ -30,14 +30,14 @@
                                     <constraint firstAttribute="height" constant="44" id="g6L-lk-P2q"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Album" id="rcU-3x-gcF">
+                                    <barButtonItem tag="3" title="Album" id="rcU-3x-gcF">
                                         <connections>
                                             <action selector="pickAnImage:" destination="BYZ-38-t0r" id="tnW-cg-UbD"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem systemItem="camera" id="hWf-7D-6yW">
+                                    <barButtonItem tag="4" systemItem="camera" id="hWf-7D-6yW">
                                         <connections>
-                                            <action selector="takeAPicture:" destination="BYZ-38-t0r" id="NUp-Ix-zp3"/>
+                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="F3m-gM-j0O"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

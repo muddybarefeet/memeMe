@@ -23,14 +23,31 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let topTextDelegate = TextFieldDelegate()
     let bottomTextDelegate = TextFieldDelegate()
     
-//     set the font
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-//        -3.0 keeps the text white
         NSStrokeWidthAttributeName : -3.0
     ]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        imagePickerView.contentMode = UIViewContentMode.ScaleAspectFill
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        shareButton.enabled = false
+        setupText()
+    }
+    
+    func setupText () {
+        topText.text = "TOP"
+        bottomText.text = "BOTTOM"
+        topText.defaultTextAttributes = memeTextAttributes
+        bottomText.defaultTextAttributes = memeTextAttributes
+        topText.textAlignment = .Center
+        bottomText.textAlignment = .Center
+        topText.delegate = topTextDelegate
+        bottomText.delegate = bottomTextDelegate
+    }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -76,26 +93,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
 //    ---------------------------------------------------------------------
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        shareButton.enabled = false
-        imagePickerView.contentMode = UIViewContentMode.ScaleAspectFill
-        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-        topText.text = "TOP"
-        bottomText.text = "BOTTOM"
-//        set the font type
-        topText.defaultTextAttributes = memeTextAttributes
-        bottomText.defaultTextAttributes = memeTextAttributes
-//        center the text in the text fields
-        topText.textAlignment = .Center
-        bottomText.textAlignment = .Center
-//        set the delegates
-        topText.delegate = topTextDelegate
-        bottomText.delegate = bottomTextDelegate
-        shareButton.enabled = false
-        
-    }
-    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePickerView.image = image
@@ -106,19 +103,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBAction func pickAnImage (sender: AnyObject) {
 //        launch the imagepicker
-        print("clicked album button")
+         print("TAG",sender.tag)
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        if sender.tag == 3 {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        } else if sender.tag == 3 {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        }
         presentViewController(imagePicker, animated:true, completion:nil)
-    }
-    
-    
-    @IBAction func takeAPicture (sender: AnyObject) {
-        let camera = UIImagePickerController()
-        camera.delegate = self
-        camera.sourceType = UIImagePickerControllerSourceType.Camera
-        presentViewController(camera, animated: true, completion: nil)
     }
     
     struct Meme {
@@ -129,19 +122,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
-    var memes = [Meme]()
-    
     func save(memedImage: UIImage) {
-        print("saving the image")
-        let memeImg = Meme(topString: topText.text!, bottomString: bottomText.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
-        memes.append(memeImg)
-        print("memes", memes)
+        _ = Meme(topString: topText.text!, bottomString: bottomText.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
     }
     
     @IBAction func shareMemeButtonPressed(sender: UIBarButtonItem) {
-        print("button clicked to share")
         let memedImage = generateMemedImage()
-        print("meme image generated")
         let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         presentViewController(activityViewController, animated: true, completion: nil)
         
