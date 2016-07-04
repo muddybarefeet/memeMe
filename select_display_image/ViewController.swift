@@ -28,7 +28,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : 3.0
+//        -3.0 keeps the text white
+        NSStrokeWidthAttributeName : -3.0
     ]
     
 
@@ -93,6 +94,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topText.delegate = topTextDelegate
         bottomText.delegate = bottomTextDelegate
         shareButton.enabled = false
+        
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
