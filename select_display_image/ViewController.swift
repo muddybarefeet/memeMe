@@ -17,8 +17,7 @@ UINavigationControllerDelegate {
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
     @IBOutlet weak var topToolbar: UIToolbar!
-
-    @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var bottomToolbar: UIToolbar!
     
     
 //    name the delegates
@@ -128,7 +127,7 @@ UINavigationControllerDelegate {
     
     func save(memedImage: UIImage) {
         
-        let meme = Meme(topString: topText.text, bottomString: bottomText.text, originalImage: imagePickerView.image, memedImage: memedImage)
+//        let meme = Meme(topString: topText.text!, bottomString: bottomText.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
         //TODO: Add to memes array in AppDelegate
     }
     

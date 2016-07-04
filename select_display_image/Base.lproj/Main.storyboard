@@ -78,12 +78,10 @@
                     </view>
                     <connections>
                         <outlet property="bottomText" destination="YcW-8s-gdy" id="785-hw-2H7"/>
-                        <outlet property="bottomToolbar" destination="1DG-HJ-JS4" id="p7V-Yg-6Iq"/>
+                        <outlet property="bottomToolbar" destination="1DG-HJ-JS4" id="I5V-59-ZHK"/>
                         <outlet property="cameraButton" destination="hWf-7D-6yW" id="Xt5-Vu-S2t"/>
                         <outlet property="imagePickerView" destination="zth-xi-eSf" id="rFE-Rc-3nG"/>
                         <outlet property="shareButton" destination="ZpW-uw-lm9" id="50K-go-mUv"/>
-                        <outlet property="toolBar" destination="1DG-HJ-JS4" id="ZUT-pM-4RT"/>
-                        <outlet property="toolbar" destination="1DG-HJ-JS4" id="gBP-JF-r0f"/>
                         <outlet property="topText" destination="U3t-z9-nZn" id="0Qk-e6-FIR"/>
                         <outlet property="topToolbar" destination="Iix-Rg-bJj" id="f1X-CS-IcA"/>
                     </connections>
