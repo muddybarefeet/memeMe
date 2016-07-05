@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95412AB61D2BE91500ADF2AC /* MemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95412AB51D2BE91500ADF2AC /* MemeModel.swift */; };
 		95AA11DA1D29ED1800E8F0A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA11D91D29ED1800E8F0A9 /* AppDelegate.swift */; };
 		95AA11DC1D29ED1800E8F0A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA11DB1D29ED1800E8F0A9 /* ViewController.swift */; };
 		95AA11DF1D29ED1800E8F0A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95AA11DD1D29ED1800E8F0A9 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95412AB51D2BE91500ADF2AC /* MemeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeModel.swift; sourceTree = "<group>"; };
 		95AA11D61D29ED1700E8F0A9 /* select_display_image.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = select_display_image.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AA11D91D29ED1800E8F0A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95AA11DB1D29ED1800E8F0A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				95AA11E01D29ED1800E8F0A9 /* Assets.xcassets */,
 				95AA11E21D29ED1800E8F0A9 /* LaunchScreen.storyboard */,
 				95AA11E51D29ED1800E8F0A9 /* Info.plist */,
+				95412AB51D2BE91500ADF2AC /* MemeModel.swift */,
 			);
 			path = select_display_image;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				95AA11EF1D2AA05B00E8F0A9 /* TextFieldDelegate.swift in Sources */,
 				95AA11DC1D29ED1800E8F0A9 /* ViewController.swift in Sources */,
 				95AA11DA1D29ED1800E8F0A9 /* AppDelegate.swift in Sources */,
+				95412AB61D2BE91500ADF2AC /* MemeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

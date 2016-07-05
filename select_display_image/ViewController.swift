@@ -74,13 +74,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func keyboardWillShow(notification: NSNotification) {
         if bottomText.isFirstResponder() {
-            self.view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y -= getKeyboardHeight(notification)
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
         if bottomText.isFirstResponder() {
-            self.view.frame.origin.y += getKeyboardHeight(notification)
+            view.frame.origin.y += getKeyboardHeight(notification)
         }
     }
     
@@ -101,8 +101,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func pickAnImage (sender: AnyObject) {
-//        launch the imagepicker
-         print("TAG",sender.tag)
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         if sender.tag == 3 {
@@ -111,13 +109,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
         }
         presentViewController(imagePicker, animated:true, completion:nil)
-    }
-    
-    struct Meme {
-        var topString: String
-        var bottomString: String
-        var originalImage: UIImage
-        var memedImage: UIImage
     }
     
     
@@ -144,8 +135,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topToolbar.hidden = true
         bottomToolbar.hidden = true
         // Render view to an image
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawViewHierarchyInRect(view.frame, afterScreenUpdates: true)
         let memedImage : UIImage =
             UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
