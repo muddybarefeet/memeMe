@@ -35,18 +35,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePickerView.contentMode = UIViewContentMode.ScaleAspectFill
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         shareButton.enabled = false
-        setupText()
+        setupText("TOP")
+        setupText("BOTTOM")
     }
     
-    func setupText () {
-        topText.text = "TOP"
-        bottomText.text = "BOTTOM"
-        topText.defaultTextAttributes = memeTextAttributes
-        bottomText.defaultTextAttributes = memeTextAttributes
-        topText.textAlignment = .Center
-        bottomText.textAlignment = .Center
-        topText.delegate = topTextDelegate
-        bottomText.delegate = bottomTextDelegate
+    func setupText (textPosition: String) {
+        let selector = textPosition == "TOP" ? topText : bottomText
+        _ = textPosition == "TOP" ? topTextDelegate : bottomTextDelegate
+        selector.text = textPosition
+        selector.defaultTextAttributes = memeTextAttributes
+        selector.textAlignment = .Center
+        selector.delegate = topTextDelegate
     }
 
     override func viewWillAppear(animated: Bool) {
