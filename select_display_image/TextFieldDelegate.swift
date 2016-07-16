@@ -23,7 +23,7 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-//if the enter ket is pressed the the keyboard wants to be hidden
+//if the enter key is pressed the the keyboard wants to be hidden
         textField.resignFirstResponder()
         if (textField.text!.isEmpty) && textField.tag == 1 {
             textField.text = "TOP"

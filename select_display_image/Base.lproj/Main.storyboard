@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -15,35 +15,38 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zth-xi-eSf">
-                                <rect key="frame" x="0.0" y="64" width="600" height="501"/>
+                                <rect key="frame" x="-140" y="64" width="600" height="469"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="600" id="S57-C6-MrN"/>
                                 </constraints>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1DG-HJ-JS4">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <rect key="frame" x="-4" y="524" width="328" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="g6L-lk-P2q"/>
                                 </constraints>
                                 <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="JM3-Vj-NWt"/>
                                     <barButtonItem tag="3" title="Album" id="rcU-3x-gcF">
                                         <connections>
                                             <action selector="pickAnImage:" destination="BYZ-38-t0r" id="tnW-cg-UbD"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="dmW-tK-apF"/>
                                     <barButtonItem tag="4" systemItem="camera" id="hWf-7D-6yW">
                                         <connections>
                                             <action selector="pickAnImage:" destination="BYZ-38-t0r" id="F3m-gM-j0O"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xWc-Ho-DBh"/>
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iix-Rg-bJj">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
+                                <rect key="frame" x="-4" y="0.0" width="328" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="tDh-Pt-AXd"/>
                                 </constraints>
@@ -56,7 +59,7 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YSA-Ia-oRp">
-                                <rect key="frame" x="86" y="462" width="427" height="40"/>
+                                <rect key="frame" x="-54" y="430" width="427" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="nBr-Td-rqY"/>
@@ -65,7 +68,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U3t-z9-nZn">
-                                <rect key="frame" x="86" y="117" width="427" height="40"/>
+                                <rect key="frame" x="-54" y="117" width="427" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="427" id="4wj-Mt-1sL"/>
@@ -91,15 +94,9 @@
                             <constraint firstItem="YSA-Ia-oRp" firstAttribute="height" secondItem="U3t-z9-nZn" secondAttribute="height" id="eAI-t2-V8y"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1DG-HJ-JS4" secondAttribute="bottom" id="hsO-ui-C4n"/>
                             <constraint firstItem="zth-xi-eSf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mjS-x9-475"/>
-                            <constraint firstItem="1DG-HJ-JS4" firstAttribute="top" secondItem="zth-xi-eSf" secondAttribute="bottom" id="pi3-B9-tfW"/>
                             <constraint firstItem="YSA-Ia-oRp" firstAttribute="top" secondItem="zth-xi-eSf" secondAttribute="bottom" constant="-103" id="xfw-MC-sqN"/>
                             <constraint firstItem="zth-xi-eSf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="14.5" id="zHG-nP-jg5"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="pi3-B9-tfW"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="bottomText" destination="YSA-Ia-oRp" id="A2X-mo-NYK"/>
@@ -113,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="178" y="331"/>
+            <point key="canvasLocation" x="94.933333333333337" y="313.34666666666664"/>
         </scene>
     </scenes>
 </document>

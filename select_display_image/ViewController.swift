@@ -32,7 +32,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePickerView.contentMode = UIViewContentMode.ScaleAspectFill
+        imagePickerView.contentMode = UIViewContentMode.ScaleAspectFit
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         shareButton.enabled = false
         setupText("TOP")
@@ -74,19 +74,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func keyboardWillShow(notification: NSNotification) {
         if bottomText.isFirstResponder() {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = getKeyboardHeight(notification) * (-1)
+        } else if topText.isFirstResponder(){
+            reset()
         }
     }
     
+    //  return the keyboard to the bottom position
+    func reset() {
+        self.view.frame.origin.y = 0
+    }
+    
     func keyboardWillHide(notification: NSNotification) {
-        if bottomText.isFirstResponder() {
-            view.frame.origin.y += getKeyboardHeight(notification)
-        }
+        reset()
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
         let userInfo = notification.userInfo!
-        let keyboardSize = userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        let keyboardSize = userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.CGRectValue().height
     }
     
@@ -95,6 +100,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePickerView.image = image
+            imagePickerView.contentMode = UIViewContentMode.ScaleAspectFit
             shareButton.enabled = true
             dismissViewControllerAnimated(true, completion: nil)
         }
@@ -105,13 +111,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.delegate = self
         if sender.tag == 3 {
             imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        } else if sender.tag == 3 {
+        } else if sender.tag == 4 {
             imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
         }
         presentViewController(imagePicker, animated:true, completion:nil)
     }
     
-    
+//    save image
     func save(memedImage: UIImage) {
         _ = Meme(topString: topText.text!, bottomString: bottomText.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
     }
@@ -131,7 +137,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func generateMemedImage() -> UIImage {
-        // TODO: Hide toolbar and navbar
         topToolbar.hidden = true
         bottomToolbar.hidden = true
         // Render view to an image
@@ -140,7 +145,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memedImage : UIImage =
             UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        // TODO:  Show toolbar and navbar
         topToolbar.hidden = false
         bottomToolbar.hidden = false
         return memedImage
